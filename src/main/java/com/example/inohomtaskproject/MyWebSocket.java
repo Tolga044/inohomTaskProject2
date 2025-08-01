@@ -93,4 +93,13 @@ public class MyWebSocket extends WebSocketListener {
             e.printStackTrace();
         }
     }
+     @Override
+    public void onFailure(WebSocket webSocket, Throwable t, Response response) {
+        Log.e(TAG, "WebSocket hata: ", t);
+    }
+
+    @Override
+    public void onClosed(WebSocket webSocket, int code, String reason) {
+        Log.d(TAG, "WebSocket kapandı: " + code + " / " + reason);
+    }
 }
